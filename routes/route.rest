@@ -1,0 +1,31 @@
+GET http://localhost:3000/garages
+
+###
+
+POST http://localhost:3000/garages
+Content-Type: application/json
+
+{
+  "name": "Sango",
+  "leader": "Ariyo Wumi",
+  "phone": "08052131102",
+  "deadline": 18,
+  "lat": 40,
+  "lng": 5
+}
+
+###
+
+
+GET http://localhost:3000/garages/5e5c4ee592d12e30440df204
+
+###
+DELETE http://localhost:3000/garages/5e5c4d06a017b91e2451d6b5
+
+###
+PATCH http://localhost:3000/garages/5e5c5217083e903abce53818
+Content-Type: application/json 
+
+{
+  "lat": "50",
+}
