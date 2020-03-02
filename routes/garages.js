@@ -63,8 +63,9 @@ router.patch('/:id', getGarage, async(req, res) => {
         res.garage.deadline = req.body.deadline
     }
 
-    // ISSUE WHEN LAT SUPPLIED WITHOUT LONG
-    if (req.body.lat != null && req.body.lng != null) {
+    if (req.body.lat != null || req.body.lng != null) {
+        req.body.lat = req.body.lat == null ? res.garage.location.coordinates[0] : req.body.lat
+        req.body.lng = req.body.lng == null ? res.garage.location.coordinates[1] : req.body.lng
         res.garage.location.coordinates = [req.body.lat, req.body.lng]
     }
 
