@@ -1,33 +1,50 @@
 #### This file contains requests to test the endpoints using VSCode's Rest Client
 
-GET http://localhost:3000/garages
+################## Patient Routes ################
+GET http://localhost:3000/patients
 
 ###
 
-POST http://localhost:3000/garages
+POST http://localhost:3000/patients
 Content-Type: application/json
 
 {
-  "name": "Idumota",
-  "leader": "Martin Chillout",
-  "phone": "09061279158",
-  "deadline": 17,
-  "lat": -533,
-  "lng": 51
+  "name": "Daniel Dante",
+  "card": 93241,
+  "category": "student",
+  "contact": "08032177494",
+  "address": "17, bbs road, babcock university",
+  "id": 210202,
+  "marital": "Single",
+  "age": 29,
+  "occupation": "Carpenter"
 }
 
 ###
 
 
-GET http://localhost:3000/garages/5e5c4ee592d12e30440df204
+GET http://localhost:3000/patients/5e5e50dddb12b13798eb22a0
 
 ###
-DELETE http://localhost:3000/garages/5e5c4d06a017b91e2451d6b5
+DELETE http://localhost:3000/patients/5e5e0b40a360871aa839c23e
 
 ###
-PATCH http://localhost:3000/garages/5e5cc8cb35c46c6180a1bb6d
+PATCH http://localhost:3000/patients/5e5e6ea5aa43211294d3e1da
 Content-Type: application/json 
 
 {
-  "lng": 85
+  "name": "Wisdom Yombouno",
+  "occupation": "Driver",
+  "marital": "Divorced",
+  "category": "nontstaff",
+  "address": "7, Unity street, Cambridge, London",
+  "height": 98,
+  "pulse": 44,
+  "respiratory": 89,
+  "BMI": 56,
+  "temperature": 32,
+  "sugarlevel": 67,
+  "bloodgroup": "O+",
+  "allergies": "Money",
+  "addictions": "Guys"
 }

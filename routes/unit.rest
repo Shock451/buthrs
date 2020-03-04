@@ -1,0 +1,17 @@
+########## Unit Routes ###############
+
+# Get all units
+GET http://localhost:3000/units
+
+###
+
+# Create unit
+POST http://localhost:3000/units
+Content-Type: application/json
+
+{
+  "name": "BUCC",
+  "head_id": 210202 
+}
+
+###

@@ -1,0 +1,106 @@
+<!--================ Banner Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="banner_content text-left">
+                <h2>{{category.name}}</h2>
+                <div class="page_link">
+                    <a href="/">Home</a>
+                    <a href="/person/{{category.url}}">{{category.name}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================End Banner Area =================-->
+<div class="container">
+    <div class="section-top-border my-5">
+        <div class="row my-5">
+            <div class="col-lg-8 col-md-8">
+                <h3 class="mb-30 title_color">Find a {{category.name}}</h3>
+                <form action="/person/find/{{category.url}}" method="POST">
+                    Search By Hospital Card Number <br>
+                    <div class="mt-10">
+                        <input type="text" name="card" placeholder="Card Number" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Card Number'" required class="single-input">
+                    </div>
+                    <div class="button-group-area">
+                        <button type="submit" class="genric-btn success py-0 px-3">Search</button>
+                    </div>
+                </form>
+                <br> <br>
+                {{!-- <form action="#">
+                    Search By {{category.name}} Card Number
+                    <div class="mt-10">
+                        <input type="text" name="id" placeholder="Student ID" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Student ID'" required class="single-input">
+                    </div>
+                    <div class="button-group-area">
+                        <button type="submit" class="genric-btn success py-0 px-3">Search</button>
+                    </div>
+                </form> --}}
+            </div>
+            {{#if patient includeZero=true}}
+            <div class="col-lg-4 col-md-4">
+                <h3 class="mb-30 title_color">Result</h3>
+                <div>
+                    <b>Patient ID</b>: {{patient.id}} <br>
+                    <b>Name</b>: {{patient.name}} <br>
+                    <b>Category</b>: {{patient.category}} <br>
+                    <b>Card Number</b>: {{patient.card}} <br>
+                    <b>Home Address</b>: {{patient.address}} <br>
+                    <b>Age</b>: {{patient.age}} <br>
+                    <b>Marital Status</b>: {{patient.marital}} <br>
+                    <b>Occupation</b>: {{patient.occupation}} <br>
+                    <b>Contact</b>: {{patient.Contact}} <br>
+                    <b>Next of Kin</b>: {{patient.nok.name}} <br>
+                    <b>Next of Kin Address </b>: {{patient.nok.address}} <br>
+                    <b>Next of Kin Contact</b>: {{patient.nok.contact}} <br>
+                    <b>Notes</b>: <br>
+                    {{#if patient.additional.length}}
+                    {{#each patient.additional}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{this}} <br>
+                    {{/each}}
+                    {{/if}}
+                    <b>Vitals</b>: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Height</b>: {{patient.vitals.height}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Temperature</b>: {{patient.vitals.temperature}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>BMI</b>: {{patient.vitals.BMI}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Respiratory</b>: {{patient.vitals.respiratory}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Pulse</b>: {{patient.vitals.pulse}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Sugar Level</b>: {{patient.vitals.sugarlevel}} <br>
+                    <b>Medicals</b>: <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Genotype</b>: {{patient.medicals.genotype}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>bloodGroup</b>: {{patient.medicals.bloodGroup}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Allergies</b>: {{patient.medicals.allergies}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Asthmatic</b>: {{patient.medicals.asthmatic}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Handicap</b>: {{patient.medicals.handicap}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Addictions</b>: <br>
+                    {{#if patient.medicals.addictions.length}}
+                    {{#each patient.medicals.addictions}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{this}} <br>
+                    {{/each}}
+                    {{/if}}
+                    <b>Medical History</b>: <br>
+                    {{#if patient.medicalhistory.length}}
+                    {{#each patient.medicalhistory.length}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Past Illness</b>: {{this.pastillness}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Family Health History</b>: {{this.familyhealthhistory}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>STI / STD</b>: {{this.sti}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Complaints</b>: {{this.complaints}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Diagnosis</b>: {{this.diagnosis}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Treatment</b>: {{this.treatment}} <br>
+                    {{/each}}
+                    {{/if}}
+                </div>
+            </div>
+
+            {{else}}
+            <div class="col-lg-4 col-md-4">
+                <h3 class="mb-30 title_color">No records found</h3>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
