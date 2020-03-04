@@ -11,7 +11,7 @@ var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-mongoose.connect(process.env.DATABASE_URL || process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/buthrs', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
