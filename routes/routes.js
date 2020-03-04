@@ -91,7 +91,8 @@ router.post('/person/find/:category', async (req, res) => {
         data = patient.map((p) => p.toObject()),
         res.render('findperson', {
             category: category,
-            patient: data[0]
+            patient: data[0],
+            isPost: true
         })
     } catch (err) {
         return res.status(500).json({

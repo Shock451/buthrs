@@ -43,7 +43,7 @@
             </div>
             {{#if patient includeZero=true}}
             <div class="col-lg-4 col-md-4">
-                <h3 class="mb-30 title_color">Result</h3>
+                <h3 class="mb-30 title_color">{{patient.card}} - {{patient.name}}</h3>
                 <div>
                     <b>Patient ID</b>: {{patient.id}} <br>
                     <b>Name</b>: {{patient.name}} <br>
@@ -97,9 +97,11 @@
             </div>
 
             {{else}}
-            <div class="col-lg-4 col-md-4">
-                <h3 class="mb-30 title_color">No records found</h3>
-            </div>
+            {{#if isPost}}
+                <div class="col-lg-4 col-md-4">
+                    <h3 class="mb-30 title_color">No records found</h3>
+                </div>
+            {{/if}}
             {{/if}}
         </div>
     </div>
