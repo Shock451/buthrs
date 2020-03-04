@@ -12,7 +12,9 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 })
 const db = mongoose.connection
 db.on('error', (error) => console.log(error))
@@ -45,4 +47,4 @@ app.use("/units", unitsRouter)
 const defaultRouter = require("./routes/routes")
 app.use("/", defaultRouter)
 
-app.listen(process.env.PORT, () => console.log(`Server started.\nListening on port ${process.env.PORT}`))
+app.listen(process.env.PORT || 3000, () => console.log(`Server started.\nListening on port ${process.env.PORT || 3000}`))
