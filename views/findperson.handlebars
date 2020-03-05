@@ -55,7 +55,7 @@
                     <b>Marital Status</b>: {{patient.marital}} <br>
                     <b>Occupation</b>: {{patient.occupation}} <br>
                     <b>Contact</b>: {{patient.Contact}} <br>
-                    <b>Next of Kin</b>: {{patient.nok.name}} <br>
+                    <b>Next of Kin</b>: {{patient.nok.name || "Nil"}} <br>
                     <b>Next of Kin Address </b>: {{patient.nok.address}} <br>
                     <b>Next of Kin Contact</b>: {{patient.nok.contact}} <br>
                     <b>Notes</b>: <br>
@@ -91,7 +91,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<b>STI / STD</b>: {{this.sti}} <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<b>Complaints</b>: {{this.complaints}} <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<b>Diagnosis</b>: {{this.diagnosis}} <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Treatment</b>: {{this.treatment || "Nil"}} <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Treatment</b>: {{this.treatment}} <br>
                     {{/each}}
                     {{/if}}
                 </div>
