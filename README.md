@@ -22,3 +22,17 @@ To improve health data record
 - GAZA VICTORY    16/1300
 - ABIODUN TAIWO    16/1637
 - FOLARIN MERCY    14/0679
+
+
+#### How to run
+
+
+##### Install dependencies
+
+
+> npm install 
+
+  
+##### start development server
+
+> npm devStart
